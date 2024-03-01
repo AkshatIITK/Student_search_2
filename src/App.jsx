@@ -1,8 +1,8 @@
-import { CssBaseline, ThemeProvider, createTheme, IconButton, Button } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { CssBaseline, ThemeProvider, createTheme, IconButton } from '@mui/material';
 import React, { useState } from 'react';
 import FilterData from './filter';
 import SearchResult from './SearchResult';
+
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import './index.css'
@@ -36,7 +36,7 @@ function App() {
 
         <header style={{ padding: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1 style={{ margin: 0 }} className='main-text-heading'>Y23 Student Search</h1>
-{/*           <Button
+          {/* <Button
             variant="outlined"
             startIcon={<GitHubIcon />}
             component="a"
