@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AkshatIITK/student-search/static/css/main.3ac73db7.css",
+    "main.js": "/AkshatIITK/student-search/static/js/main.22dd7032.js",
+    "index.html": "/AkshatIITK/student-search/index.html",
+    "main.3ac73db7.css.map": "/AkshatIITK/student-search/static/css/main.3ac73db7.css.map",
+    "main.22dd7032.js.map": "/AkshatIITK/student-search/static/js/main.22dd7032.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ac73db7.css",
+    "static/js/main.22dd7032.js"
+  ]
+}
