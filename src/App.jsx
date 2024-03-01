@@ -36,7 +36,7 @@ function App() {
 
         <header style={{ padding: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1 style={{ margin: 0 }} className='main-text-heading'>Y23 Student Search</h1>
-          <Button
+{/*           <Button
             variant="outlined"
             startIcon={<GitHubIcon />}
             component="a"
@@ -44,7 +44,7 @@ function App() {
             target="_blank"
           >
             @Akshat23
-          </Button>
+          </Button> */}
           <IconButton onClick={toggleDarkMode} sx={{ zIndex: 999 }}>
             {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
