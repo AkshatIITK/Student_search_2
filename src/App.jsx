@@ -3,8 +3,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import React, { useState } from 'react';
 import FilterData from './filter';
 import SearchResult from './SearchResult';
-import AlertComponent from './AlertComponent';
-import ToggleColorMode from './dark_mode_btn';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import './index.css'
