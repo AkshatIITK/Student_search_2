@@ -68,7 +68,7 @@ function FilterData({ updateFilterSearch }) {
         }}
       >
         
-        <Item sx={{ mr: 7 ,mb:3, }}>
+        <Item sx={{mb : 3 , mr: 1  }}>
           <FormControl fullWidth>
             <InputLabel id="department-label">Department</InputLabel>
             <Select
@@ -80,11 +80,26 @@ function FilterData({ updateFilterSearch }) {
             >
               <MenuItem value="Materials Science and Engineering">Materials Science and Engineering</MenuItem>
               <MenuItem value="Mechanical Engineering">Mechanical Engineering</MenuItem>
+              <MenuItem value="Aerospace Engineering">Aerospace Engineering</MenuItem>
+              <MenuItem value="Chemistry">Chemistry</MenuItem>
               <MenuItem value="Civil Engineering">Civil Engineering</MenuItem>
+              <MenuItem value="Biological Sciences and Bioengineering">Biological Sciences and Bioengineering</MenuItem>
+              <MenuItem value="Computer Science and Engineering">Computer Science and Engineering</MenuItem>
+              <MenuItem value="Economics">Economics</MenuItem>
+              <MenuItem value="Electrical Engineering">Electrical Engineering</MenuItem>
+              <MenuItem value="Chemical Engineering">Chemical Engineering</MenuItem>
+              <MenuItem value="Physics">Physics</MenuItem>
+              <MenuItem value="Statistics and Data Science">Statistics and Data Science</MenuItem>
+              <MenuItem value="Earth Science">Earth Science</MenuItem>
+              <MenuItem value="Mathematics and Statistics">Mathematics and Statistics</MenuItem>
+
+
+
+
             </Select>
           </FormControl>
         </Item>
-        <Item sx={{ mr: 7 ,mb:3, }}>
+        <Item sx={{mb : 3 , mr: 1  }}>
           <FormControl fullWidth>
             <InputLabel id="gender-label">Gender</InputLabel>
             <Select
@@ -101,7 +116,7 @@ function FilterData({ updateFilterSearch }) {
         </Item>
 
 
-        <Item sx={{ mr: 7 ,mb:3, }}>
+        <Item sx={{mb : 3 , mr: 1  }}>
           <FormControl fullWidth>
             <InputLabel id="hall-label">HALL</InputLabel>
             <Select
@@ -112,9 +127,6 @@ function FilterData({ updateFilterSearch }) {
               onChange={(e) => handleSelectChange(e, 'h')}
             >
               <MenuItem value="HALL13">HALL13</MenuItem>
-              <MenuItem value="HALL12">HALL12</MenuItem>
-              <MenuItem value="HALL3">HALL3</MenuItem>
-              <MenuItem value="HALL5">HALL5</MenuItem>
               <MenuItem value="HALL4">HALL4</MenuItem>
 
             </Select>
@@ -122,7 +134,7 @@ function FilterData({ updateFilterSearch }) {
         </Item>
         
 
-        <Item sx={{ mr: 7 ,mb:3, }}>
+        <Item sx={{mb : 3 , mr: 1  }}>
           <FormControl fullWidth>
             <InputLabel id="program-label">Program</InputLabel>
             <Select
@@ -137,7 +149,7 @@ function FilterData({ updateFilterSearch }) {
             </Select>
           </FormControl>
         </Item>
-        <Item sx={{ mr: 7 ,mb:3, }}>
+        <Item sx={{mb : 3 , mr: 1  }}>
           <FormControl fullWidth>
             <InputLabel id="blood-group-label">Blood Group</InputLabel>
             <Select
@@ -158,7 +170,7 @@ function FilterData({ updateFilterSearch }) {
             </Select>
           </FormControl>
         </Item>
-        <Item sx={{ mr: 7,mb:3, width:500 }}>
+        <Item sx={{ mb:3, width:500 }}>
           <TextField sx={{width: .95}}
             id="Name-basic"
             label="Name/RollNo/UserName"
