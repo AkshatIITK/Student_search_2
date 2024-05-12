@@ -148,7 +148,7 @@ export default function SearchResult({ filterSearch }) {
               {student.n}
             </Typography>
               <Typography variant="body2" color="text.secondary">
-                <div><img style={{borderRadius :"50%" , width: "100px" , height: "100px"}} src={`https://oa.cc.iitk.ac.in/Oa/Jsp/Photo/${student.i}_0.jpg`}></img></div>
+                <div><img style={{borderRadius :"50%" , width: "100px" , height: "100px"}} alt='avatar' src={`https://oa.cc.iitk.ac.in/Oa/Jsp/Photo/${student.i}_0.jpg`}></img></div>
                 <strong>RollNo:</strong> {student.i} <br/>
                 <strong>Department:</strong> {student.p} {student.d}
               </Typography>
@@ -176,7 +176,7 @@ export default function SearchResult({ filterSearch }) {
           {selectedStudent && (
             <>
               <Typography variant="body2" color="text.secondary">
-              <div><img style={{borderRadius :"50%" , width: "100px" , height: "100px"}} src={`https://oa.cc.iitk.ac.in/Oa/Jsp/Photo/${selectedStudent.i}_0.jpg`}></img></div>
+              <div><img style={{borderRadius :"50%" , width: "100px" , height: "100px"}} alt='avatar' src={`https://oa.cc.iitk.ac.in/Oa/Jsp/Photo/${selectedStudent.i}_0.jpg`}></img></div>
                 <strong>Roll No:</strong> {selectedStudent.i} <br />
                 <strong>Room No:</strong> {selectedStudent.r} {selectedStudent.h} <br />
                 <strong>Address:</strong> {selectedStudent.a} <br />
