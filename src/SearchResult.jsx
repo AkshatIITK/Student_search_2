@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-
 async function fetchStudentData(filterData) {
   try {
     // Define MongoDB Realm configuration
@@ -24,7 +23,13 @@ async function fetchStudentData(filterData) {
     const studentData = await fetchDataFromMongoDB(realmConfig, accessToken, filterData);
 
     // Process the fetched student data
-    console.log("Fetched student data:", studentData);
+    console.log("Data Fetching....")
+    // console.log("Fetched student data:", studentData);
+    if(studentData.length){
+      console.log("Data Fetched...")
+    } else{
+      console.log("No record found...")
+    }
 
     return studentData;
   } catch (error) {
@@ -62,7 +67,7 @@ async function getAccessToken(realmConfig) {
 
 async function fetchDataFromMongoDB(realmConfig, accessToken, filterData) {
 
-  console.log('Updated filterSearch:',filterData);
+  // console.log('Updated filterSearch:',filterData);
   try {
     // Fetch data from MongoDB using the obtained access token
     const response = await fetch(`https://ap-south-1.aws.data.mongodb-api.com/app/${realmConfig.APP_ID}/endpoint/data/v1/action/find`, {
@@ -131,29 +136,47 @@ export default function SearchResult({ filterSearch }) {
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' , justifyContent:'center' }}>
-      {studentData.map((student, index) => (
+      {studentData.length ? studentData.map((student, index) => (
         <Card
           key={index}
-          sx={{ maxWidth: 345, marginBottom: 2, cursor: 'pointer' , width: 400, m:2}}
+          sx={{ maxWidth: 345, marginBottom: 2, cursor: 'pointer' , width: 400, m:2,}}
           onClick={() => handleCardClick(student)}
         >
+        <div style={{textAlign:"center"}}>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component="div" sx={{fontWeight: "600"}}>
               {student.n}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              <strong>RollNo:</strong> {student.i} <br/>
-              <strong>Department:</strong> {student.p} {student.d}
+              <Typography variant="body2" color="text.secondary">
+                <div><img style={{borderRadius :"50%" , width: "100px" , height: "100px"}} src={`https://oa.cc.iitk.ac.in/Oa/Jsp/Photo/${student.i}_0.jpg`}></img></div>
+                <strong>RollNo:</strong> {student.i} <br/>
+                <strong>Department:</strong> {student.p} {student.d}
+              </Typography>
+          </CardContent>
+        </div>
+        </Card>
+      )): <div>
+            <Card>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div" sx={{fontWeight: "400"}}>
+             
             </Typography>
+              <Typography variant="body2" color="text.secondary">
+                <strong>No Record Found</strong>
+                {/* <div><img style={{borderRadius :"50%" , width: "100px" , height: "100px"}} src={`https://oa.cc.iitk.ac.in/Oa/Jsp/Photo/${student.i}_0.jpg`}></img></div>
+                <strong>RollNo:</strong> {student.i} <br/>
+                <strong>Department:</strong> {student.p} {student.d} */}
+              </Typography>
           </CardContent>
         </Card>
-      ))}
-      <Dialog open={openDialog} onClose={handleCloseDialog} maxWidth="md">
-        <DialogTitle>{selectedStudent && selectedStudent.n}</DialogTitle>
+      </div>}
+      <Dialog open={openDialog} onClose={handleCloseDialog} maxWidth="md" sx={{textAlign:"center" , borderRadius: "200px"}}>
+        <DialogTitle sx={{fontWeight: "700"}}>{selectedStudent && selectedStudent.n}</DialogTitle>
         <DialogContent sx={{ padding: 6, borderRadius:4 }}>
           {selectedStudent && (
             <>
               <Typography variant="body2" color="text.secondary">
+              <div><img style={{borderRadius :"50%" , width: "100px" , height: "100px"}} src={`https://oa.cc.iitk.ac.in/Oa/Jsp/Photo/${selectedStudent.i}_0.jpg`}></img></div>
                 <strong>Roll No:</strong> {selectedStudent.i} <br />
                 <strong>Room No:</strong> {selectedStudent.r} {selectedStudent.h} <br />
                 <strong>Address:</strong> {selectedStudent.a} <br />
